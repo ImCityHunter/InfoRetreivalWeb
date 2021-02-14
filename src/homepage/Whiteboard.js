@@ -1,7 +1,6 @@
 import React from 'react';
 
-import InsertFilePage from '../insertFile/insertFile';
-
+import InsertFilePage from '../insertFile/InsertFilePage';
 class Whiteboard extends React.Component {
     render(){
         return(

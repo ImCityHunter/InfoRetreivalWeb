@@ -1,7 +1,7 @@
 import React from 'react';
 import {stopList, inverted_indexes, TagsNeeded} from '../variables/variables';
+import {calculateRunningTime} from "./CalculateMemorySpaceAndTime";
 
-let timeRunning  = 0;
 export const parseXML = (insertFile) => {
     let begin = new Date();
     const parser = new DOMParser();
@@ -29,12 +29,8 @@ export const parseXML = (insertFile) => {
     }
     sorted.sort();
     let end = new Date();
-    timeRunning = (end - begin)/1000;
+    calculateRunningTime(begin, end);
     return sorted
-}
-
-export const getRunTime = () => {
-    return timeRunning;
 }
 
 export const checkExtension = (file) => {
@@ -44,13 +40,19 @@ export const checkExtension = (file) => {
     }
 }
 
+export const checkApostrophe = (word) => {
+    return word.match(/\'/);
+}
+
 export const tokenizing = (record_id, paragraph) => {
-    let words = paragraph.split(/[\[\]<>.,\/#!$%\^&\*;:{}=_()?@\s\"]/g); //remove punctuation marks
+    let words = paragraph.split(/[\[\]<>.,\/#!$%\^&\*;:{}=_()?@\s\"]/g); //split paragraphs by punctuation marks and space(s)
     for (let word of words){
         word = word.toLowerCase();
-        //word = word.replace(/[0-9]/g, '');
-        word = word.replace(/[\-_~\'\d+]/g,"") // remove hypens and apostrophies
-        if(word == null || word.length==0 || stopList.includes(word)){
+        word = word.replace(/[\-_~\d+]/g,"") // remove hyphens and digits
+        if(word == null || word.length==0 || stopList.includes(word)){ // default check
+            continue;
+        }
+        else if (checkApostrophe(word)){ // if a word has apostrophes, ignore for now
             continue;
         }
         else{
@@ -68,5 +70,5 @@ export const indexing = (record_id, word) => {
 }
 
 export default {
-    parseXML, getRunTime, checkExtension
+    parseXML, checkExtension, checkApostrophe
 }

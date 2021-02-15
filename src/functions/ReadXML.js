@@ -37,6 +37,13 @@ export const getRunTime = () => {
     return timeRunning;
 }
 
+export const checkExtension = (file) => {
+    const extension = file.target.files[0].name.match(/\.[0-9a-z]+$/i);
+    if (extension!=".xml"){ //alert if inserted file is not an xml file
+        alert("this is not an xml file");
+    }
+}
+
 export const tokenizing = (record_id, paragraph) => {
     let words = paragraph.split(/[\[\]<>.,\/#!$%\^&\*;:{}=_()?@\s\"]/g); //remove punctuation marks
     for (let word of words){
@@ -57,10 +64,9 @@ export const indexing = (record_id, word) => {
     if (!list.includes(record_id)){
         list.push(record_id);
         inverted_indexes[word] = list;
-        console.log(list)
     }
 }
 
 export default {
-    parseXML, getRunTime
+    parseXML, getRunTime, checkExtension
 }

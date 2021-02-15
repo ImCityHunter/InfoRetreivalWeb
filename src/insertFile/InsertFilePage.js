@@ -1,8 +1,8 @@
 import React from 'react';
 
 import readStopList from '../functions/ReadStopList';
-import {parseXML, getRunTime} from '../functions/ReadXML'
-import {inverted_indexes, stopList} from '../variables/variables';
+import {parseXML, getRunTime, checkExtension} from '../functions/ReadXML'
+import {inverted_indexes} from '../variables/variables';
 import ShowInvertedIndex from "../showInvertedIndexes/ShowInvertedIndex";
 class InsertFilePage extends React.Component {
     constructor(props) {
@@ -28,10 +28,11 @@ class InsertFilePage extends React.Component {
             })
         };
         reader.readAsText(e.target.files[0])
+        checkExtension(e); // only alert if file is not an .xml
     }
 
     submit = async (e) => {
-        const sorted =  await parseXML(this.state.xmlFile)
+        const sorted =  await parseXML(this.state.xmlFile);
         const time = await getRunTime();
         this.setState({
             sorted:sorted,

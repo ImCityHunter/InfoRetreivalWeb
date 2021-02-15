@@ -1,9 +1,9 @@
 
 
 export const stopList = [];
-export const TagsNotNeeded = new Set ( ["RECORDNUM","PAPERNUM","MEDLINENUM","AUTHORS","TITLE","SOURCE","MAJORSUBJ","MINORSUBJ","TOPIC","CITE","REFERENCES","AUTHOR","CITATIONS"]);
+//export const TagsNotNeeded = new Set ( ["RECORDNUM","PAPERNUM","MEDLINENUM","AUTHORS","TITLE","SOURCE","MAJORSUBJ","MINORSUBJ","TOPIC","CITE","REFERENCES","AUTHOR","CITATIONS"]);
 
-export const TagsNeeded = new Set(["RECORDNUM","ABSTRACT","EXTRACT", "QueryText"]);
+export const TagsNeeded = new Set(["RECORDNUM","ABSTRACT","EXTRACT", "TITLE"]);
 /*
 * array of object (each object contains word, and list of record of indexes in sequences)
 * [
@@ -13,5 +13,5 @@ export const TagsNeeded = new Set(["RECORDNUM","ABSTRACT","EXTRACT", "QueryText"
 * */
 export const inverted_indexes = {};
 export default {
-    stopList, TagsNotNeeded, TagsNeeded, inverted_indexes
+    stopList, TagsNeeded, inverted_indexes
 }

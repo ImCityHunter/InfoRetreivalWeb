@@ -1,7 +1,8 @@
-import React from 'react';
 
+// NOT USED
+import React from 'react';
 import readStopList from '../functions/ReadStopList';
-import {parseXML, checkExtension} from '../functions/ReadXML';
+import {parseXML, checkExtension} from '../functions/ReadCFCXML';
 import {getRunTime, getMemoryUsed} from '../functions/CalculateMemorySpaceAndTime';
 import {inverted_indexes} from '../variables/variables';
 import ShowInvertedIndex from "../showInvertedIndexes/ShowInvertedIndex";

@@ -1,13 +1,14 @@
 import React from 'react';
 
-import InsertFilePage from '../insertFile/InsertFilePage';
+import Homepage from './Homepage';
+
 class Whiteboard extends React.Component {
     render(){
         return(
             <div className={'justify-content-center text-center'}>
                 <br/>
-                <h1> Tokenizing and Indexing </h1>
-                <InsertFilePage />
+                <h1> Ranking </h1>
+                <Homepage />
             </div>
         )
     }

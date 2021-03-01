@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae3c865-9229-413a-b5a8-a3160ac3220f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/functions/CalculateMemorySpaceAndTime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/ConvertDataToExcel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/ProduceQueryData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/Ranking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/ReadQueryXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/Tokenizing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/Utilities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphPage/ProduceLineChart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphPage/ProduceSimpleScatterChart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphPage/ShowGraphPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/homepage/Homepage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userInsertQuery/ShowRankingArray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userInsertQuery/ShowRankingPageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userInsertQuery/UserInsertPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/ReadXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ReadXML.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insertFile/InsertFilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/insertFile/InsertFilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/ReadXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ReadCFCXML.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homepage/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/homepage/Whiteboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/insertFile/InsertFilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/filesNotUsed/InsertFilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/showInvertedIndexes/ShowInvertedIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/variables/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables/variables.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -23,6 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1oPjhZJBDtb4w1as4dqVdQsZx6C" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,9 +55,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/userInsertQuery" />
+      <recent name="$PROJECT_DIR$/src/graphPage" />
+      <recent name="$PROJECT_DIR$/src/filesNotUsed" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -48,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613195240096</updated>
       <workItem from="1613195243642" duration="36530000" />
-      <workItem from="1613327498823" duration="9973000" />
+      <workItem from="1613327498823" duration="128935000" />
     </task>
     <servers />
   </component>
@@ -56,9 +87,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1613279226698">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614415994255">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1613279226698" />
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1614415994255" />
+    <state x="429" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614243566010">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="429" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1614243566010" />
+    <state x="303" y="52" key="CommitChangelistDialog2" timestamp="1614109717806">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="303" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1614109717806" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1614472787067">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1614472787067" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1614575707623">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614575707623" />
   </component>
 </project>

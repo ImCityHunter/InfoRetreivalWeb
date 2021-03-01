@@ -65,12 +65,29 @@ export const tokenizing = (record_id, paragraph) => {
     let temp = [];
     for (let word of words){
         word = word.toLowerCase();
-        word = word.replace(/[\-_~\d+]/g,"") // remove hyphens and digits
+        word = word.replace(/[_~\d+]/g,"") // remove hyphens and digits
         if(word == null || word.length==0 || stopList.includes(word)){ // default check
             continue;
         }
         else if (checkApostrophe(word)){ // if a word has apostrophes, ignore for now
             continue;
+        }
+        else if(word.match('\-')){
+            let tmp2 = word.split(/\-/);
+            let tmp3 = word.replace(/\`/,'');
+            let combinedWord = false;
+            for(let i = 0; i<tmp2.length;i ++){
+                if(tmp2[i] in inverted_indexes && tmp2[i].length>1){
+                    // split word by hyphens
+                    // only add word if has been seen before
+                    // this method has flaws, but it should help indexing
+                    temp.push({"_id":record_id, "word":tmp2[i]});
+                    combinedWord = true;
+                }
+            }
+            if(!combinedWord){
+                temp.push({"_id":record_id, "word":tmp3});
+            }
         }
         else{
             temp.push({"_id":record_id, "word":word}); // make a copy of the needed word only

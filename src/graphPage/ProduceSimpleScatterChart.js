@@ -73,7 +73,7 @@ class ProduceSimpleScatterChart extends React.Component{
                     <Tooltip cursor={{ strokeDasharray: "3 3" }} />
                     <Scatter name="A school" data={this.state.data} fill="#8884d8"></Scatter>
                 </ScatterChart>
-                <button onClick={()=>this.getMapAvg10()}> get Map Average P@10 for all queries</button>
+                <button onClick={()=>this.getMapAvg10()}> get Mean Average P@10 for all queries</button>
             </div>
 
         )

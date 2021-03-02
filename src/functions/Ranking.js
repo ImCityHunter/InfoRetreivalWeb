@@ -117,10 +117,12 @@ export const buildRecordIDFSum = () => {
             for (let record_id in documentsData) {
                 let sum = 0;
                 for(let word in documentsData[record_id].termFrequency){
-                    let tf = documentsData[record_id].termFrequency[word].ntf;
-                    let idf = WordIDF[word].idf;
-                    let product = tf * idf;
-                    sum = sum + Math.pow(product,2);
+                    if(WordIDF[word] != undefined){
+                        let tf = documentsData[record_id].termFrequency[word].ntf;
+                        let idf = WordIDF[word].idf;
+                        let product = tf * idf;
+                        sum = sum + Math.pow(product,2);
+                    }
                 }
                 RecordIDFSum[record_id] = {};
                 RecordIDFSum[record_id].record_id = record_id;

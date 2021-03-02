@@ -8,6 +8,7 @@
 `npm install recharts` <br/>
 These are the packages that are installed for these project <br/>
 `npm start` <br/>
+[Website](https://cryptic-lake-70423.herokuapp.com/)
 ## Project Summary
 This is an informational retrieval project. Multiple key concepts are included in this project: indexing, tokenization, stemming, ranking, cosine-similarity, P@10, precision, recall, and MAP@10. And because using existing open-source package will ruin the purpose of this project, _all codes are self written_.
 

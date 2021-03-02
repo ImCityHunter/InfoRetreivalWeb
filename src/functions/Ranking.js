@@ -24,20 +24,24 @@ export const buildQueryTF = (queryText) => {
     let words = generalTokenizing(queryText);
     //console.log(words);
     let queryTF = {};
-    for ( let word of words){
-        let queryLength = words.length;
-        if (WordIDF[word] !== undefined) {
-            if (queryTF[word] === undefined){
-                queryTF[word] = new Object();
-            }
-            queryTF[word].count =  (queryTF[word].count === undefined) ? 1:queryTF[word].count++;
-            queryTF[word].ntf = queryTF[word].count / queryLength;
-            queryTF[word].tfXidf = WordIDF[word].idf * queryTF[word].ntf;
-        }
-    }
 
-    //console.log('query text key words: ' + Object.keys(queryTF));
-    return calculateCosineSimilarity(queryTF);
+    if(Object.keys(WordIDF).length > 50 && Object.keys(documentsData).length > 50){
+        for ( let word of words){
+            let queryLength = words.length;
+            if (WordIDF[word] !== undefined) {
+                if (queryTF[word] === undefined){
+                    queryTF[word] = new Object();
+                }
+                queryTF[word].count =  (queryTF[word].count === undefined) ? 1:queryTF[word].count++;
+                queryTF[word].ntf = queryTF[word].count / queryLength;
+                queryTF[word].tfXidf = WordIDF[word].idf * queryTF[word].ntf;
+            }
+        }
+        //console.log('query text key words: ' + Object.keys(queryTF));
+        return calculateCosineSimilarity(queryTF);}
+    else{
+        alert("please refresh because the default data are not properly built")
+    }
 }
 
 /**
@@ -124,7 +128,7 @@ export const buildRecordIDFSum = () => {
             }
             //console.log(RecordIDFSum);
         }
-    }, 700);
+    }, 800);
     return buildRecordIDFSum;
 
 }

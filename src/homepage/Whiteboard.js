@@ -7,7 +7,7 @@ class Whiteboard extends React.Component {
         return(
             <div className={'justify-content-center text-center'}>
                 <br/>
-                <h1> Ranking </h1>
+                <h1> Tokenization x Indexing x Ranking </h1>
                 <Homepage />
             </div>
         )

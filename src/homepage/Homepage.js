@@ -5,12 +5,13 @@ import {buildWordIDF} from "../functions/Ranking";
 import {readQueryXMLFile} from '../functions/ReadQueryXML';
 import ShowGraphPage from "../graphPage/ShowGraphPage";
 import UserInsertPage from "../userInsertQuery/UserInsertPage";
+import ShowInvertedIndex from "../invertedIndexPage/ShowInvertedIndex";
 class Homepage extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            show: true
+            show: "SEARCH"
         }
     }
     componentDidMount =  async () => {
@@ -22,32 +23,49 @@ class Homepage extends React.Component {
 
     showGraph = () => {
         this.setState({
-            show:false
+            show:"GRAPH"
         })
     }
 
     showUserInput = () =>{
         this.setState({
-            show:true
+            show:"SEARCH"
         })
+    }
+
+    showIndex = ()=>{
+        this.setState({
+            show:"INDEX"
+        })
+    }
+    openLink = () =>{
+        window.open('https://github.com/ImCityHunter/InfoRetreivalWeb', '_blank');
     }
 
     render(){
         return(
             <div>
                 <label>
-                    <button onClick={()=>this.showGraph()}> Show 100 queries result </button>
-                    <button onClick={()=>this.showUserInput()}> Insert Customized query </button>
+                    <button className={'mr-2'}
+                        onClick={()=>this.showGraph()}>Show 100 queries result</button>
+                    <button className={'mr-2'}
+                        onClick={()=>this.showIndex()}>Show Inverted Index </button>
+                    <button className={'mr-2'}
+                        onClick={()=>this.showUserInput()}> Insert Customized query </button>
+                    <button
+                        onClick={()=>this.openLink()}>Read Design</button>
                 </label>
 
                 {
-                    !this.state.show && <ShowGraphPage/>
+                    this.state.show=="GRAPH" && <ShowGraphPage/>
                 }
 
                 {
-                    this.state.show && <UserInsertPage/>
+                    this.state.show=="SEARCH" && <UserInsertPage/>
                 }
-
+                {
+                    this.state.show=="INDEX" && <ShowInvertedIndex/>
+                }
             </div>
         )
     }

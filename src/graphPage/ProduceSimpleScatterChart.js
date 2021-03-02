@@ -10,7 +10,6 @@ import {
     LabelList
 } from "recharts";
 
-import {documentsIDF, documentsData} from '../variables/variables';
 import {buildP10GraphData, mapAverageP10} from '../functions/ProduceQueryData';
 import {exportToCsv} from '../functions/ConvertDataToExcel';
 
@@ -47,6 +46,9 @@ class ProduceSimpleScatterChart extends React.Component{
         }
     }
 
+    downloadPRData = () =>{
+        exportToCsv(this.state.data);
+    }
 
     render(){
         return(
@@ -73,6 +75,12 @@ class ProduceSimpleScatterChart extends React.Component{
                     <Tooltip cursor={{ strokeDasharray: "3 3" }} />
                     <Scatter name="A school" data={this.state.data} fill="#8884d8"></Scatter>
                 </ScatterChart>
+                <br/>
+                <button
+                    className={'btn btn-success'}
+                    onClick={()=>this.downloadPRData()}> See all Precision and Recall Data @10 in excel file</button>
+                <br/>
+                <br/>
                 <button onClick={()=>this.getMapAvg10()}> get Mean Average P@10 for all queries</button>
             </div>
 

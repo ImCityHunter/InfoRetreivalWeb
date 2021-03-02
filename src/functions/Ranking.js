@@ -1,5 +1,5 @@
-import {inverted_indexes, sorted, documentsData, WordIDF, RecordIDFSum} from "../variables/variables";
-import {tokenizingQuery} from "./Tokenizing";
+import {inverted_indexes, documentsData, WordIDF, RecordIDFSum} from "../variables/variables";
+import {generalTokenizing} from "./Tokenizing";
 
 /**
  * return top sliced ranked result by K
@@ -21,7 +21,8 @@ export const getTopResult = (queryText, k) =>{
  * @returns {(string|number)[][]}
  */
 export const buildQueryTF = (queryText) => {
-    let words = tokenizingQuery(queryText);
+    let words = generalTokenizing(queryText);
+    //console.log(words);
     let queryTF = {};
     for ( let word of words){
         let queryLength = words.length;

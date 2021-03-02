@@ -2,8 +2,12 @@
 
 import {buildQueryTF, getTopResult} from '../functions/Ranking'
 import {convertArray} from './Utilities';
-import {readQueryXMLFile, allQueries} from './ReadQueryXML';
-import {exportToCsv} from './ConvertDataToExcel';
+import {allQueries} from "../variables/variables";
+
+/**
+ * calculate all precisoion@10 for all queries
+ * @returns {[]}
+ */
 export const buildP10GraphData = () => {
     const expected =  allQueries;
     let data = [];
@@ -23,6 +27,13 @@ export const buildP10GraphData = () => {
 
 }
 
+/**
+ * This function is capable of calculating Precision and Recall with any given K
+ * @param expected
+ * @param queryNum
+ * @param k
+ * @returns {Promise<Object>}
+ */
 export const calculatePrecisionAndRecall = async (expected, queryNum, k) => {
     //await readQueryXMLFile();
 
@@ -64,6 +75,7 @@ export const calculatePrecisionAndRecall = async (expected, queryNum, k) => {
 
 /**
  * find the mean average P10 for all 100 queries (MAP@10)
+ * iterate each iterate from k=1 to k=10, and sum of the result and divide to get the average
  */
 export const mapAverageP10 = () =>{
     const expected =  allQueries;

@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+
+// npm install bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// npm install --save font-awesome
+import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -72,14 +72,17 @@ class UserInsertPage extends React.Component{
                     </form>
 
                 }
-                <br/>
-                <br/>
 
                 {
-                    !this.state.result && <button onClick={()=>this.submit()}>Search</button>
+                    !this.state.result && <button
+                        className={'btn btn-info'}
+                        onClick={()=>this.submit()}>Search</button>
                 }
                 {
-                    this.state.result && <button onClick={()=>this.delete()}>Clean</button>
+
+                    this.state.result &&
+                    <button  onClick={()=>this.delete()}
+                        className="fa fa-trash fa-5x" aria-hidden="true"></button>
                 }
                 {
                     this.state.result && <ShowRankingPageContainer

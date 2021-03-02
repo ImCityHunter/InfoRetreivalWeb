@@ -1,6 +1,7 @@
 import React from 'react';
 import {stopList, inverted_indexes, TagsNeeded, cfcFiles, sorted, documentsData} from '../variables/variables';
 import {calculateRunningTime} from "./CalculateMemorySpaceAndTime";
+import {generalTokenizing} from './Tokenizing'
 
 export const readAllXmlFiles = () =>{
     //new_inverted_indexes(); // clear all key-value pair
@@ -40,7 +41,15 @@ export const parseXML = (insertFile) => {
         for (const tag of record.getElementsByTagName("*")){
             let tagName = tag.tagName;
             if(TagsNeeded.has(tagName)){ // if tag is in the NotNeeded set, tokenize it
-                tokenizing(record_id, record.getElementsByTagName(tagName)[0].childNodes[0].data)
+                let text = record.getElementsByTagName(tagName)[0].childNodes[0].data;
+
+                // return array of terms/words
+                let temp = generalTokenizing(text);
+
+                for (let word of temp){
+                    indexing(record_id, word); // set up a map for each word
+                    setupDocumentsData(record_id, word, temp.length); // set up a map for each doc
+                }
             }
         }
     }
@@ -55,55 +64,6 @@ export const checkExtension = (file) => {
     }
 }
 
-export const checkApostrophe = (word) => {
-    return word.match(/\'/);
-}
-
-
-export const tokenizing = (record_id, paragraph) => {
-    let words = paragraph.split(/[\[\]<>.,\/#!$%\^&\*;:{}=_()?@\s\"]/g); //split paragraphs by punctuation marks and space(s)
-    let temp = [];
-    for (let word of words){
-        word = word.toLowerCase();
-        word = word.replace(/[_~\d+]/g,"") // remove hyphens and digits
-        if(word == null || word.length==0 || stopList.includes(word)){ // default check
-            continue;
-        }
-        else if (checkApostrophe(word)){ // if a word has apostrophes, ignore for now
-            continue;
-        }
-        else if(word.match('\-')){
-            let tmp2 = word.split(/\-/);
-            let tmp3 = word.replace(/\`/,'');
-            let combinedWord = false;
-            for(let i = 0; i<tmp2.length;i ++){
-                if(tmp2[i] in inverted_indexes && tmp2[i].length>1){
-                    // split word by hyphens
-                    // only add word if has been seen before
-                    // this method has flaws, but it should help indexing
-                    temp.push({"_id":record_id, "word":tmp2[i]});
-                    combinedWord = true;
-                }
-            }
-            if(!combinedWord){
-                temp.push({"_id":record_id, "word":tmp3});
-            }
-        }
-        else{
-            temp.push({"_id":record_id, "word":word}); // make a copy of the needed word only
-        }
-    }
-
-    for(let pair of temp){
-        let record_id = pair._id;
-        let word = pair.word;
-
-        indexing(record_id, word); // set up a map for each word
-        setupDocumentsData(record_id, word, temp.length); // set up a map for each doc
-    }
-
-    //console.log(documentsData);
-}
 
 // set up TF
 export const setupDocumentsData = (record_id, word, size) =>{

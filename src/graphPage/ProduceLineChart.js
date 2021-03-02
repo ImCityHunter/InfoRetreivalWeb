@@ -2,6 +2,7 @@ import React from "react";
 import { LineChart, Line, YAxis, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { calculateInterpolated } from "../functions/ProduceQueryData";
 
+
 class ProduceLineChart extends React.Component {
     constructor(props) {
         super(props);
@@ -19,6 +20,7 @@ class ProduceLineChart extends React.Component {
         console.log('interpolate result :',tmp);
         alert('check console log for details');
     }
+
 
     render() {
         return (

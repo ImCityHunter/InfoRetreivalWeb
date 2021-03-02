@@ -1,3 +1,5 @@
+import {inverted_indexes} from "../variables/variables";
+
 /**
  * convert an 2-d array of [ranked docId, score] to just [docId]
  * @param array
@@ -13,6 +15,19 @@ export const convertArray = (array) =>{
     return result
 }
 
+
+export const sortInvertedIndex = ()=>{
+    const sort = [];
+    for (let word in inverted_indexes){
+        sort.push(word);
+    }
+    sort.sort();
+    return sort;
+}
+
+
+
+
 export default {
-    convertArray
+    convertArray, sortInvertedIndex
 }

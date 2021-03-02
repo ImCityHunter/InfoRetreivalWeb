@@ -29,12 +29,13 @@ export const RecordIDFSum = {};
 
 export const getSorted = () =>  sorted;
 
+export const allQueries = {};
 
 export const sorted = [];
 export const stopList = [];
-//export const TagsNotNeeded = new Set ( ["RECORDNUM","PAPERNUM","MEDLINENUM","AUTHORS","TITLE","SOURCE","MAJORSUBJ","MINORSUBJ","TOPIC","CITE","REFERENCES","AUTHOR","CITATIONS"]);
 
-export const TagsNeeded = new Set(["RECORDNUM","ABSTRACT","EXTRACT", "TITLE"]);
+export const TagsNeeded = new Set(["ABSTRACT","EXTRACT", "TITLE", "TOPIC","AUTHOR"]);
+
 /*
 * object (each object contains word, and list of record of indexes in sequences)
 * [
@@ -52,6 +53,7 @@ export const new_inverted_indexes = () =>{
     }
 }
 
+export const special_cases = {};
 
 
 export default {

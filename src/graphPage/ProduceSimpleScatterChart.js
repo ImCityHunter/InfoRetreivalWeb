@@ -54,6 +54,9 @@ class ProduceSimpleScatterChart extends React.Component{
         return(
             <div className={"container-fluid"}>
                 <br/>
+                <button
+                    className={'btn btn-warning'}
+                    onClick={()=>this.getMapAvg10()}> get Mean Average P@10 for all queries</button>
                 <h2>Precision@10 Graphs for 100 Queries</h2>
                 <ScatterChart
                     width={1000}
@@ -104,7 +107,6 @@ class ProduceSimpleScatterChart extends React.Component{
                     onClick={()=>this.downloadPRData()}> See all Precision and Recall Data @10 in excel file</button>
                 <br/>
                 <br/>
-                <button onClick={()=>this.getMapAvg10()}> get Mean Average P@10 for all queries</button>
             </div>
 
         )

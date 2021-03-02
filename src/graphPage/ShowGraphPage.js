@@ -34,6 +34,10 @@ export class ShowGraphPage extends React.Component{
                 {
                     this.state.show && <ProduceLineChart/>
                 }
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         )
     }

@@ -43,7 +43,11 @@ export const calculatePrecisionAndRecall = async (expected, queryNum, k) => {
     let queryText = expected[queryNum].queryText;
     actual = getTopResult(queryText, k);
 
-
+    /*
+     * remove score, and just keep docId
+     * from [{}] => []
+     * @type {*[]}
+     */
     let tmpActual = convertArray(actual);
     let expectedDocs = expected[queryNum].expectedDocs;
 
@@ -58,7 +62,7 @@ export const calculatePrecisionAndRecall = async (expected, queryNum, k) => {
             relevantRetrieved++;
         }
     }
-    let precision = relevantRetrieved/k;
+    let precision = relevantRetrieved / k;
     let recall = relevantRetrieved / (allRelevant);
 
     //console.log('queryNum',queryNum,'k',k,"precision: ",precision, 'recall', recall);
@@ -111,7 +115,7 @@ export const mapAverageP10 = () =>{
                 apk[queryNum].sum = apk[queryNum].sum + apk[queryNum][k]; // sum p@k
 
                 if(k == 10){
-                    mapK = mapK + apk[queryNum].sum/10; //ap@10 for all
+                    mapK = mapK + apk[queryNum].sum/10; // only add ap@10 to the sum
                 }
 
                 if(k == 10 && i == Object.keys(allQueries).length-1 ){ // divide ap@10 by number of queries

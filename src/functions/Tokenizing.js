@@ -184,7 +184,7 @@ export const generalTokenizing = (text)=>{
         word = word.toLowerCase(); // to lowercase
         word = word.replace(/[\d+]/g,""); // remove digits
 
-        if(word == undefined || word.length <= 2 || stopList.includes(word)){
+        if(word == undefined || word.length < 2 || stopList.includes(word)){
             continue;
         }
         else if(checkApostrophe(word)){
@@ -192,18 +192,17 @@ export const generalTokenizing = (text)=>{
             if(tmp[0] in inverted_indexes){
                 // only add word if has been seen before
                 // this method has flaws, but it should help indexing
-                tmp[0] = hasAddedInOtherForm(tmp[0]);
-                wordArr.push(tmp[0]);
+                // this should be able to deal with Wilsons' => Wilson
+                wordArr.push(hasAddedInOtherForm(tmp[0]));
             }
         }
         else if(checkHyphen(word)){
             let tmp = word.split(/\-/);
             for(let i = 0; i<tmp.length;i ++){
-                if(tmp[i] in inverted_indexes){
+                if(tmp[i].length>2){ //remove birth-day to birthday
                     // only add word if has been seen before
                     // this method has flaws, but it should help indexing
-                    tmp[i] = hasAddedInOtherForm(tmp[i]);
-                    wordArr.push(tmp[i]);
+                    wordArr.push(hasAddedInOtherForm(tmp[i]));
                 }
             }
         }

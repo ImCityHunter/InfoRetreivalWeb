@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae3c865-9229-413a-b5a8-a3160ac3220f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/invertedIndexPage/ShowInvertedIndex.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/invertedIndexPage/ShowInvertedIndexArray.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment01.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/ProduceQueryData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ProduceQueryData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/Ranking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Ranking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/ReadCFCXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ReadCFCXML.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/ReadQueryXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ReadQueryXML.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/ReadStopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/ReadStopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions/Tokenizing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Tokenizing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/Utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/Utilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphPage/ProduceLineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphPage/ProduceLineChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphPage/ProduceSimpleScatterChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphPage/ProduceSimpleScatterChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homepage/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/homepage/Homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homepage/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/homepage/Whiteboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userInsertQuery/UserInsertPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInsertQuery/UserInsertPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/variables/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables/variables.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +63,8 @@
       <workItem from="1613327498823" duration="133902000" />
       <workItem from="1614664759349" duration="14000" />
       <workItem from="1614664805702" duration="14701000" />
-      <workItem from="1614680900643" duration="25000" />
+      <workItem from="1614680900643" duration="922000" />
+      <workItem from="1614681916789" duration="2498000" />
     </task>
     <servers />
   </component>
@@ -88,10 +72,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614415994255">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614681864572">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1614415994255" />
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1614681864572" />
     <state x="429" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614243566010">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -104,9 +88,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1614472787067" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1614575707623">
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614681867512">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614575707623" />
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1614681867512" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1614681942278">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614681942278" />
   </component>
 </project>

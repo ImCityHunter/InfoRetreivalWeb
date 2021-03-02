@@ -107,7 +107,7 @@ export const mapAverageP10 = () =>{
             }
 
             calculatePrecisionAndRecall(expected, queryNum, k).then((pair)=>{
-                apk[queryNum][k] = pair.precision/k; // p@k
+                apk[queryNum][k] = pair.precision/1.0; // p@k, divide by 1.0 to get the float value
                 apk[queryNum].sum = apk[queryNum].sum + apk[queryNum][k]; // sum p@k
 
                 if(k == 10){

@@ -31,3 +31,4 @@ One of the toughest issues in writting a self-made information retrieval system 
 
 ## Improvements
 Every time the page refreshes, all the calcuations will be re-do again; this might cause the ranking result slightly different everytime. Ideally, these functions should be stored somewhere in a server for use.
+At the time of writing, **the MAP@10 score is approximately 0.49** 

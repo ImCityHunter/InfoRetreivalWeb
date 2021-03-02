@@ -1,21 +1,46 @@
 import {inverted_indexes, stopList} from "../variables/variables";
 
+/**
+ *
+ * @param word
+ * @returns {string[] | boolean | void | SnapshotReturnOptions | RegExpMatchArray | Promise<Response | undefined> | *}
+ */
 const checkApostrophe = (word) => {
     return word.match(/\'/);
 }
 
+/**
+ *
+ * @param word
+ * @returns {string[] | boolean | void | SnapshotReturnOptions | RegExpMatchArray | Promise<Response | undefined> | *}
+ */
 const checkHyphen = (word) => {
     return word.match(/\-/);
 }
 
+/**
+ *
+ * @param word
+ * @returns {boolean|boolean}
+ */
 const checkBasicPlurals = (word) =>{
     return word.length > 3 && (word.slice(-1) == 's' || word.slice(-2) == 'es');
 }
 
+/**
+ *
+ * @param word
+ * @returns {boolean|boolean}
+ */
 const checkPresentTense = (word) => {
     return word.length > 3 && (word.slice(-3) == 'ing');
 }
 
+/**
+ *
+ * @param word
+ * @returns {string|*}
+ */
 const removePresentTense = (word) => { // assume the word end of ing, and see if exist in other form
     let tmp = word.substring(0,word.length-3);
     let tmp2 = word.substring(0,word.length-3).concat('e');
@@ -28,7 +53,11 @@ const removePresentTense = (word) => { // assume the word end of ing, and see if
     return word;
 }
 
-
+/**
+ *
+ * @param word
+ * @returns {string|*}
+ */
 const tokenzingPluarals = (word) => {
     let specialCases = ['ss','sh','ch','x','z','s'] // with these cases, plurals have 'es'
     if(word.slice(-1) == 's'){
@@ -64,6 +93,11 @@ const tokenzingPluarals = (word) => {
     return word;
 }
 
+/**
+ *
+ * @param word
+ * @returns {Buffer|builders.Concat|any[]|string|*}
+ */
 const checkEnding = (word)=>{
     let specialCases = ['s','es','ed','ing', 'ly','d']; // possible word ending that has been added
     for(let i = 0; i<specialCases.length; i++){
@@ -81,13 +115,6 @@ const checkEnding = (word)=>{
  * @returns {string|Buffer|builders.Concat|any[]|*}
  */
 const hasAddedInOtherForm = (word) =>{
-    let specialCases = ['s','es','ed','ing', 'ly','d']; // possible word ending that has been added
-    for(let i = 0; i<specialCases.length; i++){
-        let tmp = word.concat(specialCases[i]);
-        if(tmp in inverted_indexes){
-            return tmp;
-        }
-    }
 
     if(word.slice(-1) == 'y'){
         let tmp = word.substring(0, word.length-1).concat('ies'); // plurals
@@ -166,7 +193,7 @@ const hasAddedInOtherForm = (word) =>{
         }
     }
 
-    return word;
+    return checkEnding(word);
 }
 /**
  *

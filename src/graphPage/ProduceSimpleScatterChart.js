@@ -54,7 +54,7 @@ class ProduceSimpleScatterChart extends React.Component{
         return(
             <div className={"container-fluid"}>
                 <br/>
-                <h2>P@10 Graphs for 100 Queries</h2>
+                <h2>Precision@10 Graphs for 100 Queries</h2>
                 <ScatterChart
                     width={1000}
                     height={400}
@@ -75,6 +75,29 @@ class ProduceSimpleScatterChart extends React.Component{
                     <Tooltip cursor={{ strokeDasharray: "3 3" }} />
                     <Scatter name="A school" data={this.state.data} fill="#8884d8"></Scatter>
                 </ScatterChart>
+                <br/>
+                <h2>Recall@10 Graphs for 100 Queries</h2>
+                <ScatterChart
+                    width={1000}
+                    height={400}
+                    margin={{
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                        left: 20
+                    }}
+                >
+                    <CartesianGrid />
+                    <XAxis type="number" label={{ value: "queryNum", position: "insideBottomRight"}}
+                           dx={5}
+                           dataKey="queryNum" name="queryNum"/>
+                    <YAxis type="number" label={{ value: "recall", position: "insideTopLeft" }}
+                           dy={5}
+                           dataKey="recall" name="recall"/>
+                    <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                    <Scatter name="A school" data={this.state.data} fill="#8884d8"></Scatter>
+                </ScatterChart>
+
                 <br/>
                 <button
                     className={'btn btn-success'}
